@@ -3,7 +3,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { TvShowDetailsComponent } from './module/tv-show-details/tv-show-details.component';
 
 const routes: Routes = [
-  { path: '', component: TvShowDetailsComponent },
+  { path: 'serie', component: TvShowDetailsComponent },
+  { path: '', redirectTo: 'serie', pathMatch: 'full' },
+  { path: '**', redirectTo: 'serie' }
 ];
 
 @NgModule({
