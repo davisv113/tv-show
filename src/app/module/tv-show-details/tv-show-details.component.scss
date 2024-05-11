@@ -1,0 +1,120 @@
+.details {
+  width: 100%;
+  padding: 20px;
+  height: 100%;
+
+  .details--serie {
+    color: #fff;
+    display: flex;
+    margin-bottom: 16px;
+
+    .details--title {
+      width: 80%;
+
+      .details--title--text {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-right: 16px;
+
+        h1{
+          margin: 10px 0 1px 0;
+        }
+      }
+    }
+
+    .details--episode{
+      width: 20%;
+    }
+  }
+
+  .episode{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .geral--icons{
+    display: flex;
+    gap: 12px;
+    margin-right: 16px;
+
+    div{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+
+    p{
+      margin: 0;
+      font-size: 12px;
+      white-space: nowrap;
+    }
+
+    :hover{
+      cursor: pointer;
+    }
+  }
+
+  .geral{
+    display: flex;
+  }
+
+  .elenco{
+    display: flex;
+    gap: 8px;
+
+    p{
+      background-color: #111112;
+      padding: 20px;
+      border-radius: 4px;
+    }
+  }
+}
+
+:host ::ng-deep {
+  //tabs
+  .p-tabview .p-tabview-nav li .p-tabview-nav-link {
+    border-color: transparent;
+    background-color: transparent;
+    color: #fff;
+  }
+
+  .p-tabview .p-tabview-nav li.p-highlight .p-tabview-nav-link {
+    border-bottom: 3px solid #007bff;
+    margin-bottom: 2px;
+  }
+
+  .details--episodes {
+    .p-tabview .p-tabview-nav {
+      background-color: transparent;
+      border-bottom: 1px solid #fff;
+    }
+
+    .p-tabview .p-tabview-panels {
+      background-color: transparent;
+      color: #fff;
+    }
+  }
+
+  .details--info {
+    .p-tabview .p-tabview-nav {
+      background-color: #202124;
+      border-bottom: 1px solid #fff;
+    }
+
+    .p-tabview .p-tabview-panels {
+      background-color: #202124;
+      color: #fff;
+    }
+  }
+
+  //accordion
+
+  .p-accordion .p-accordion-header .p-accordion-header-link,
+  .p-accordion .p-accordion-content {
+    background-color: transparent;
+    color: #fff;
+  }
+}

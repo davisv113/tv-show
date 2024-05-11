@@ -1,0 +1,96 @@
+<div class="details">
+  <div class="details--serie" *ngIf="serie">
+    <div class="details--title">
+      <div class="details--title--text">
+        <h1>{{ serie.Title }}</h1>
+        <img src="../../../assets/logo-telecine.svg" alt="" />
+      </div>
+      <span style="margin-right: 8px" *ngFor="let genre of serie.Genres">{{
+        genre.Title
+      }}</span>
+    </div>
+    <div class="details--episodes" *ngIf="temporadasEpisodios.length > 0">
+      <p-tabView>
+        <ng-container
+          *ngFor="let temporadaEpisodios of temporadasEpisodios; let i = index"
+        >
+          <p-tabPanel header="Temporada {{ temporadaEpisodios.temporada }}">
+            <p-accordion expandIcon="none" collapseIcon="none">
+              <p-accordionTab
+                *ngFor="let episodio of temporadaEpisodios.episodios"
+              >
+                <ng-template pTemplate="header">
+                  <div
+                    style="
+                      display: flex;
+                      justify-content: space-between;
+                      align-items: center;
+                      width: 100%;
+                    "
+                  >
+                    <span>{{ episodio.Title }}</span>
+                    <span>
+                      <img
+                        src="../../../assets/play-small-player-w.svg"
+                        alt="Ícone"
+                        width="32"
+                        height="32"
+                      />
+                    </span>
+                  </div>
+                </ng-template>
+                <div style="text-align: center">
+                  <img
+                    src="../../../assets/img-episode.jpg"
+                    alt="Ícone"
+                    width="200"
+                    height="100"
+                    style="text-align: center"
+                  />
+                </div>
+                <p>{{ episodio.Synopsis }}</p>
+              </p-accordionTab>
+            </p-accordion>
+          </p-tabPanel>
+        </ng-container>
+      </p-tabView>
+    </div>
+  </div>
+  <div class="details--info">
+    <p-tabView>
+      <ng-container>
+        <p-tabPanel header="Geral">
+          <div class="geral">
+            <div class="geral--icons">
+              <div>
+                <img src="../../../assets/add-gray-s.svg" alt="" />
+                <p>Minha Lista</p>
+              </div>
+              <div>
+                <img src="../../../assets/sad-gray-w.svg" alt="" />
+                <p>Avaliar</p>
+              </div>
+              <div>
+                <img src="../../../assets/rec-gray-s.svg" alt="" />
+                <p>Gravar</p>
+              </div>
+              <div>
+                <img src="../../../assets/share-gray-s.svg" alt="" />
+                <p>Compartilhar</p>
+              </div>
+            </div>
+            <div>
+              <h3>Sinopse</h3>
+              <p>{{ serie.Synopsis }}</p>
+            </div>
+          </div>
+        </p-tabPanel>
+        <p-tabPanel header="Elenco">
+          <div class="elenco">
+              <p *ngFor="let actor of serie.Cast">{{ actor.Name }}</p>
+          </div>
+        </p-tabPanel>
+      </ng-container>
+    </p-tabView>
+  </div>
+</div>
